@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://b656jnyj7bwfm"]
+
+[ext_resource type="Script" uid="uid://x60qdpe3okjk" path="res://dialogue_engine.gd" id="1_oi3j2"]
+[ext_resource type="FontFile" uid="uid://b3h7kd2swjemo" path="res://pixelta/Pixelta.ttf" id="2_758ep"]
+[ext_resource type="Script" uid="uid://bsg4fg7jvq3b5" path="res://dialoguebox.gd" id="2_iq77p"]
+[ext_resource type="Script" uid="uid://wqkx6uonyjxf" path="res://panel.gd" id="2_q2h7b"]
+[ext_resource type="Script" uid="uid://vqm8qh216wel" path="res://dialoguetext.gd" id="3_758ep"]
+[ext_resource type="Script" uid="uid://di06bdtl37lla" path="res://texture_rect.gd" id="4_hoxo3"]
+[ext_resource type="Texture2D" uid="uid://cfn67ghdrcn2v" path="res://e7ca219ff1ba45b4509e4fb217eb2435.jpg" id="6_iqg0b"]
+[ext_resource type="Script" uid="uid://hg016n42b5qr" path="res://key.gd" id="9_cd3gt"]
+[ext_resource type="Script" uid="uid://cb1btepbrraur" path="res://options.gd" id="9_x4m5d"]
+
+[node name="Dialogue_Engine" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oi3j2")
+
+[node name="dialoguebox" type="CanvasLayer" parent="."]
+script = ExtResource("2_iq77p")
+
+[node name="panel" type="Panel" parent="dialoguebox"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -125.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_q2h7b")
+
+[node name="diatext" type="RichTextLabel" parent="dialoguebox"]
+offset_left = 125.0
+offset_top = 533.0
+offset_right = 1267.0
+offset_bottom = 604.11115
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/normal_font = ExtResource("2_758ep")
+theme_override_font_sizes/normal_font_size = 30
+scroll_active = false
+scroll_following = true
+script = ExtResource("3_758ep")
+
+[node name="character" type="TextureRect" parent="dialoguebox"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = -10.0
+grow_vertical = 0
+size_flags_horizontal = 4
+texture = ExtResource("6_iqg0b")
+expand_mode = 1
+script = ExtResource("4_hoxo3")
+
+[node name="script_manager" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_cd3gt")
+
+[node name="options" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+script = ExtResource("9_x4m5d")
+
+[node name="opt1" type="Button" parent="options"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 584.0
+offset_bottom = 332.0
+
+[node name="options" type="Control" parent="options/opt1"]
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+
+[node name="options2" type="Control" parent="options/opt1"]
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0
+
+[node name="options3" type="Control" parent="options/opt1"]
+anchors_preset = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -536.0
+offset_bottom = -284.0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ehhmnx28dmwo"]
+
+[ext_resource type="Script" uid="uid://bhehk4o65vh7y" path="res://character_customization_engine.gd" id="1_0v7v5"]
+
+[node name="Character Customization Engine" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0v7v5")
