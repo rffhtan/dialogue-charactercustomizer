@@ -8,7 +8,12 @@ func _ready() -> void:
 	
 func _options():
 	var button = Button.new()
-	set_text(((manager.o[1])[0]))	
+	
+	if not manager.o.size() < dialogueid.dialogueid :
+		show()
+		set_text(((manager.o[dialogueid.dialogueid])[0]))	
+	else :
+		hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
