@@ -8,7 +8,7 @@ func _ready() -> void:
 	
 func _options():
 	var button = Button.new()
-	if not manager.o.size() < dialogueid.dialogueid :
+	if manager.o.has(dialogueid.dialogueid) and manager.o[dialogueid.dialogueid].size() >= 3:
 		show()
 		set_text(((manager.o[dialogueid.dialogueid])[2]))	
 	else:
