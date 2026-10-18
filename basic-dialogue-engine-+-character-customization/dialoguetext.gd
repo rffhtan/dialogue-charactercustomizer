@@ -9,7 +9,6 @@ func _ready() -> void:
 	
 func _dialogue():
 	show()
-	print(props.diascript)
 	text = props.diascript
 
 

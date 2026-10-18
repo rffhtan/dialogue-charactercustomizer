@@ -35,15 +35,3 @@ func _process(delta: float) -> void:
 		dialogueid.dialogueid = 2
 	if Input.is_key_pressed(KEY_3) :
 		dialogueid.dialogueid = 3
-
-
-func _on_start_button_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_option_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _button_pressed() -> void:
-	pass # Replace with function body.

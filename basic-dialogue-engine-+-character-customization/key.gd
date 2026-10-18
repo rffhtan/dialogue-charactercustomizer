@@ -23,4 +23,3 @@ func _dialogue():
 func _options():
 	if o.has(dialogueid.dialogueid) :
 		options = ((o[dialogueid.dialogueid]))
-		print(options)

@@ -9,7 +9,7 @@ func _ready() -> void:
 	button.pressed.connect(_button_pressed)
 
 func _button_pressed():
-		print("b")
+	pass
 
 func _options():	
 	if  manager.o.has(dialogueid.dialogueid) :
