@@ -2,8 +2,10 @@ extends Node
 @onready var engine = get_node("/root/Dialogue_Engine")
 @export var props = load("res://dialogueresources.tres")
 var options : Array 
-var d = {1 : ["a", "Hello world", "a"], 2 : ["a", "goodbye world", "a"], 3 : ["a", "Hello! I am Place Holder.", "a"]}
-var o = {1 : ["sure man", "hello - world", "lol"], 3 : ["that's your name?"]}
+var options2 : Array
+var d = {1 : ["Hello! I am Place Holder."], 2 : ["Yeah? You got a problem?"], 3 : ["Strange? It's ethnic. German."], 4 : ["Good..."]}
+var o = {1 : ["that's your name?"], 2 : ["no, it's just... strange", "not at all", "sorry"]}
+var o2 = { 1 : [2], 2 : [3, 4, 4]}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	engine.dialogue_started.connect(_dialogue)
@@ -16,10 +18,14 @@ func _process(delta: float) -> void:
 	
 func _dialogue():
 	if  d.has(dialogueid.dialogueid) :
-		props.diacharacter = ((d[dialogueid.dialogueid])[0])
-		props.diascript = ((d[dialogueid.dialogueid])[1])
-		props.diamod = ((d[dialogueid.dialogueid])[2])
+		props.diascript = ((d[dialogueid.dialogueid])[0])
+	if is_instance_valid(props.diacharacter) :
+		props.diacharacter = (d[dialogueid.dialogueid])[1]
+	if is_instance_valid(props.diamod) :
+			props.diamod = ((d[dialogueid.dialogueid])[2])
 
 func _options():
 	if o.has(dialogueid.dialogueid) :
 		options = ((o[dialogueid.dialogueid]))
+	if o2.has(dialogueid.dialogueid) :
+		options2 = ((o2[dialogueid.dialogueid]))
