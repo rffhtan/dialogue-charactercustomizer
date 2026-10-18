@@ -113,3 +113,5 @@ text = "3"
 script = ExtResource("12_1lttb")
 
 [connection signal="pressed" from="options/option" to="options/option" method="_button_pressed"]
+[connection signal="pressed" from="options/option2" to="options/option2" method="_button_pressed"]
+[connection signal="pressed" from="options/option3" to="options/option3" method="_button_pressed"]

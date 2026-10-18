@@ -4,11 +4,17 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	engine.choices_presented.connect(_options)
-	
-func _options():
+	engine.choices_presented.connect(_options)	
 	var button = Button.new()
-	if manager.o.has(dialogueid.dialogueid) and manager.o[dialogueid.dialogueid].size() >= 2:
+	button.pressed.connect(_button_pressed)
+
+func _button_pressed():
+	if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).has(1) :
+		dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[1])
+
+
+func _options():	
+	if  manager.o.has(dialogueid.dialogueid) and (manager.o[dialogueid.dialogueid]).size() >= (2):
 		show()
 		set_text(((manager.o[dialogueid.dialogueid])[1]))	
 	else :

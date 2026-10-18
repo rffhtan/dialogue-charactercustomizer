@@ -4,14 +4,19 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	engine.choices_presented.connect(_options)
-	
-func _options():
+	engine.choices_presented.connect(_options)	
 	var button = Button.new()
-	if manager.o.has(dialogueid.dialogueid) and manager.o[dialogueid.dialogueid].size() >= 3:
+	button.pressed.connect(_button_pressed)
+
+func _button_pressed():
+	if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).has(2):
+		dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[2])
+
+func _options():	
+	if  manager.o.has(dialogueid.dialogueid) and (manager.o[dialogueid.dialogueid]).size() >= (3):
 		show()
 		set_text(((manager.o[dialogueid.dialogueid])[2]))	
-	else:
+	else :
 		hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

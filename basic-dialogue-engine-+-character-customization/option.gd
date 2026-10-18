@@ -9,10 +9,11 @@ func _ready() -> void:
 	button.pressed.connect(_button_pressed)
 
 func _button_pressed():
-	pass
+	if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).size() >= 1 :
+		dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[0])
 
 func _options():	
-	if  manager.o.has(dialogueid.dialogueid) :
+	if  manager.o.has(dialogueid.dialogueid) and (manager.o[dialogueid.dialogueid]).size() >= (1):
 		show()
 		set_text(((manager.o[dialogueid.dialogueid])[0]))	
 	else :
