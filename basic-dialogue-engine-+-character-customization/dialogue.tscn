@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b656jnyj7bwfm"]
+[gd_scene load_steps=13 format=3 uid="uid://b656jnyj7bwfm"]
 
 [ext_resource type="Script" uid="uid://x60qdpe3okjk" path="res://dialogue_engine.gd" id="1_oi3j2"]
 [ext_resource type="FontFile" uid="uid://b3h7kd2swjemo" path="res://pixelta/Pixelta.ttf" id="2_758ep"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cfn67ghdrcn2v" path="res://e7ca219ff1ba45b4509e4fb217eb2435.jpg" id="6_iqg0b"]
 [ext_resource type="Script" uid="uid://hg016n42b5qr" path="res://key.gd" id="9_cd3gt"]
 [ext_resource type="Script" uid="uid://cb1btepbrraur" path="res://options.gd" id="9_x4m5d"]
+[ext_resource type="Script" uid="uid://b6lp84noc1vxy" path="res://option.gd" id="10_x4m5d"]
+[ext_resource type="Script" uid="uid://dgpvhc8n6uavx" path="res://option_2.gd" id="11_mblti"]
+[ext_resource type="Script" uid="uid://dyqu82rh6iv2r" path="res://option_3.gd" id="12_1lttb"]
 
 [node name="Dialogue_Engine" type="Control"]
 layout_mode = 3
@@ -41,7 +44,7 @@ script = ExtResource("2_q2h7b")
 offset_left = 125.0
 offset_top = 533.0
 offset_right = 1267.0
-offset_bottom = 604.11115
+offset_bottom = 594.11115
 scale = Vector2(0.9, 0.9)
 theme_override_fonts/normal_font = ExtResource("2_758ep")
 theme_override_font_sizes/normal_font_size = 30
@@ -77,30 +80,28 @@ offset_right = -536.0
 offset_bottom = -284.0
 script = ExtResource("9_x4m5d")
 
-[node name="opt1" type="Button" parent="options"]
+[node name="option" type="Button" parent="options"]
 layout_mode = 0
-offset_left = 576.0
-offset_top = 324.0
-offset_right = 584.0
-offset_bottom = 332.0
+offset_left = 150.0
+offset_top = 595.0
+offset_right = 400.0
+offset_bottom = 635.0
+script = ExtResource("10_x4m5d")
 
-[node name="options" type="Control" parent="options/opt1"]
-anchors_preset = 0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -536.0
-offset_bottom = -284.0
+[node name="option2" type="Button" parent="options"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 595.0
+offset_right = 750.0
+offset_bottom = 635.0
+text = "2"
+script = ExtResource("11_mblti")
 
-[node name="options2" type="Control" parent="options/opt1"]
-anchors_preset = 0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -536.0
-offset_bottom = -284.0
-
-[node name="options3" type="Control" parent="options/opt1"]
-anchors_preset = 0
-offset_left = -576.0
-offset_top = -324.0
-offset_right = -536.0
-offset_bottom = -284.0
+[node name="option3" type="Button" parent="options"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 595.0
+offset_right = 1100.0
+offset_bottom = 635.0
+text = "3"
+script = ExtResource("12_1lttb")
