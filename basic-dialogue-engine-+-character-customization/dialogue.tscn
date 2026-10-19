@@ -125,6 +125,7 @@ script = ExtResource("12_1lttb")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("13_5mesi")
 region_enabled = true
+region_rect = Rect2(260, 510, 150, 380)
 script = ExtResource("14_6fyao")
 
 [node name="hair" type="Sprite2D" parent="body"]
@@ -132,6 +133,7 @@ visible = false
 texture = ExtResource("15_mywgf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -176.0
 offset_top = -145.0

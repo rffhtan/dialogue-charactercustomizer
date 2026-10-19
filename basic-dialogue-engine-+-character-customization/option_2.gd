@@ -14,13 +14,17 @@ func _button_pressed():
 	if dialogueid.dialogueid == 8 :
 		avatar.charactercode = avatar.charactercode.substr(1)
 		avatar.charactercode = avatar.charactercode.insert(0,"2")
-	if dialogueid.dialogueid == 16 :
+	if dialogueid.dialogueid == 17 :
+		print(avatar.charactercode)
 		if avatar.charactercode.substr(0,1) == "1" :
 			avatar.charactercode = avatar.charactercode.substr(1)
-			avatar.charactercode = avatar.charactercode.insert(0,"3")
+			avatar.charactercode = avatar.charactercode.insert(0,"7")
+			print(avatar.charactercode)
 		if avatar.charactercode.substr(0,1) == "2" :
 			avatar.charactercode = avatar.charactercode.substr(1)
-			avatar.charactercode = avatar.charactercode.insert(0,"4")
+			avatar.charactercode = avatar.charactercode.insert(0,"8")
+			print(avatar.charactercode)
+
 
 
 func _options():	

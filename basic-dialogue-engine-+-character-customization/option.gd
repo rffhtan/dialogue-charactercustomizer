@@ -16,11 +16,9 @@ func _button_pressed():
 		avatar.charactercode = avatar.charactercode.insert(0,"1")
 	if dialogueid.dialogueid == 16 :
 		if avatar.charactercode.substr(0,1) == "1" :
-			avatar.charactercode = avatar.charactercode.substr(1)
-			avatar.charactercode = avatar.charactercode.insert(0,"1")
+			pass
 		if avatar.charactercode.substr(0,1) == "2" :
-			avatar.charactercode = avatar.charactercode.substr(1)
-			avatar.charactercode = avatar.charactercode.insert(0,"2")
+			pass
 func _options():	
 	if  manager.o.has(dialogueid.dialogueid) and (manager.o[dialogueid.dialogueid]).size() >= (1):
 		show()

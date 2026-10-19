@@ -11,7 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if dialogueid.dialogueid == 18 :
+	if dialogueid.dialogueid == 19 :
 		show()
 		if not explode.playing :
 			explode.play(0.0)
@@ -22,4 +22,4 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(0.05).timeout
 		modulate.a = 0.25
 		modulate.a = 0
-		dialogueid.dialogueid = 19
+		dialogueid.dialogueid = 20
