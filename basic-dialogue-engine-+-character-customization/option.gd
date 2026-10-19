@@ -12,8 +12,15 @@ func _button_pressed():
 	if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).size() >= 1 :
 		dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[0])
 	if dialogueid.dialogueid == 7 :
-		pass
-
+		avatar.charactercode = avatar.charactercode.substr(1)
+		avatar.charactercode = avatar.charactercode.insert(0,"1")
+	if dialogueid.dialogueid == 16 :
+		if avatar.charactercode.substr(0,1) == "1" :
+			avatar.charactercode = avatar.charactercode.substr(1)
+			avatar.charactercode = avatar.charactercode.insert(0,"1")
+		if avatar.charactercode.substr(0,1) == "2" :
+			avatar.charactercode = avatar.charactercode.substr(1)
+			avatar.charactercode = avatar.charactercode.insert(0,"2")
 func _options():	
 	if  manager.o.has(dialogueid.dialogueid) and (manager.o[dialogueid.dialogueid]).size() >= (1):
 		show()

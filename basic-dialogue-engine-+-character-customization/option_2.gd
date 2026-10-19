@@ -11,6 +11,16 @@ func _ready() -> void:
 func _button_pressed():
 	if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).size() >= 2 :
 		dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[1])
+	if dialogueid.dialogueid == 8 :
+		avatar.charactercode = avatar.charactercode.substr(1)
+		avatar.charactercode = avatar.charactercode.insert(0,"2")
+	if dialogueid.dialogueid == 16 :
+		if avatar.charactercode.substr(0,1) == "1" :
+			avatar.charactercode = avatar.charactercode.substr(1)
+			avatar.charactercode = avatar.charactercode.insert(0,"3")
+		if avatar.charactercode.substr(0,1) == "2" :
+			avatar.charactercode = avatar.charactercode.substr(1)
+			avatar.charactercode = avatar.charactercode.insert(0,"4")
 
 
 func _options():	
