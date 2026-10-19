@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b656jnyj7bwfm"]
+[gd_scene load_steps=17 format=3 uid="uid://b656jnyj7bwfm"]
 
 [ext_resource type="Script" uid="uid://x60qdpe3okjk" path="res://dialogue_engine.gd" id="1_oi3j2"]
 [ext_resource type="FontFile" uid="uid://b3h7kd2swjemo" path="res://pixelta/Pixelta.ttf" id="2_758ep"]
@@ -12,6 +12,10 @@
 [ext_resource type="Script" uid="uid://b6lp84noc1vxy" path="res://option.gd" id="10_x4m5d"]
 [ext_resource type="Script" uid="uid://dgpvhc8n6uavx" path="res://option_2.gd" id="11_mblti"]
 [ext_resource type="Script" uid="uid://dyqu82rh6iv2r" path="res://option_3.gd" id="12_1lttb"]
+[ext_resource type="Texture2D" uid="uid://bngo4poa3mwfx" path="res://assets/pixil-layer-0.png" id="13_5mesi"]
+[ext_resource type="Script" uid="uid://bf5cui5hrhfix" path="res://node.gd" id="14_6fyao"]
+[ext_resource type="Texture2D" uid="uid://bcp1ac2s05bma" path="res://assets/pixil-layer-1.png" id="15_mywgf"]
+[ext_resource type="Texture2D" uid="uid://5ufdc0vsi1eo" path="res://assets/png-transparent-explosion-explosion-food-effect-explosion-thumbnail.png" id="16_6fyao"]
 
 [node name="Dialogue_Engine" type="Control"]
 layout_mode = 3
@@ -91,6 +95,7 @@ offset_left = 150.0
 offset_top = 595.0
 offset_right = 400.0
 offset_bottom = 635.0
+mouse_default_cursor_shape = 2
 keep_pressed_outside = true
 script = ExtResource("10_x4m5d")
 
@@ -100,6 +105,7 @@ offset_left = 500.0
 offset_top = 595.0
 offset_right = 750.0
 offset_bottom = 635.0
+mouse_default_cursor_shape = 2
 text = "2"
 script = ExtResource("11_mblti")
 
@@ -109,8 +115,24 @@ offset_left = 850.0
 offset_top = 595.0
 offset_right = 1100.0
 offset_bottom = 635.0
+mouse_default_cursor_shape = 2
 text = "3"
 script = ExtResource("12_1lttb")
+
+[node name="body" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5mesi")
+region_enabled = true
+script = ExtResource("14_6fyao")
+
+[node name="hair" type="Sprite2D" parent="body"]
+visible = false
+texture = ExtResource("15_mywgf")
+
+[node name="TextureRect" type="TextureRect" parent="body/hair"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_6fyao")
 
 [connection signal="pressed" from="options/option" to="options/option" method="_button_pressed"]
 [connection signal="pressed" from="options/option2" to="options/option2" method="_button_pressed"]
