@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b656jnyj7bwfm"]
+[gd_scene load_steps=19 format=3 uid="uid://b656jnyj7bwfm"]
 
 [ext_resource type="Script" uid="uid://x60qdpe3okjk" path="res://dialogue_engine.gd" id="1_oi3j2"]
 [ext_resource type="FontFile" uid="uid://b3h7kd2swjemo" path="res://pixelta/Pixelta.ttf" id="2_758ep"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://bf5cui5hrhfix" path="res://node.gd" id="14_6fyao"]
 [ext_resource type="Texture2D" uid="uid://bcp1ac2s05bma" path="res://assets/pixil-layer-1.png" id="15_mywgf"]
 [ext_resource type="Texture2D" uid="uid://5ufdc0vsi1eo" path="res://assets/png-transparent-explosion-explosion-food-effect-explosion-thumbnail.png" id="16_6fyao"]
+[ext_resource type="Script" uid="uid://b0kv6osx43jo1" path="res://explosio.gd" id="17_mywgf"]
+[ext_resource type="Script" uid="uid://dimkhx1fcmm0x" path="res://audio_stream_player_2d.gd" id="18_3ff0t"]
 
 [node name="Dialogue_Engine" type="Control"]
 layout_mode = 3
@@ -120,7 +122,7 @@ text = "3"
 script = ExtResource("12_1lttb")
 
 [node name="body" type="Sprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("13_5mesi")
 region_enabled = true
 script = ExtResource("14_6fyao")
@@ -129,10 +131,18 @@ script = ExtResource("14_6fyao")
 visible = false
 texture = ExtResource("15_mywgf")
 
-[node name="TextureRect" type="TextureRect" parent="body/hair"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -176.0
+offset_top = -145.0
+offset_right = 184.0
+offset_bottom = 125.0
 texture = ExtResource("16_6fyao")
+script = ExtResource("17_mywgf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-176, -145)
+script = ExtResource("18_3ff0t")
 
 [connection signal="pressed" from="options/option" to="options/option" method="_button_pressed"]
 [connection signal="pressed" from="options/option2" to="options/option2" method="_button_pressed"]

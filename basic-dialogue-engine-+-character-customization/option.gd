@@ -11,6 +11,8 @@ func _ready() -> void:
 func _button_pressed():
 	if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).size() >= 1 :
 		dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[0])
+	if dialogueid.dialogueid == 7 :
+		pass
 
 func _options():	
 	if  manager.o.has(dialogueid.dialogueid) and (manager.o[dialogueid.dialogueid]).size() >= (1):

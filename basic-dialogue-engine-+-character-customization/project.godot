@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 dialogueid="*res://dialogueid.gd"
 key="*res://key.gd"
+avatar="*res://avatar.gd"
 
 [display]
 
