@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 			position = Vector2(8.3, -98.3)
 		if str(avatar.charactercode).substr(4,1) == "2" : #fade
 			region_rect = Rect2(225,60,180,180)
-			position = Vector2(0, -98.3)
+			position = Vector2(0, -96.6)
 		if str(avatar.charactercode).substr(4,1) == "3" : #fade
 			region_rect = Rect2(470,60,230,180)
 			position = Vector2(10, -80)

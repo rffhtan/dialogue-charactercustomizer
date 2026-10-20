@@ -131,10 +131,10 @@ region_rect = Rect2(257, 50, 150, 380)
 script = ExtResource("14_6fyao")
 
 [node name="hair" type="Sprite2D" parent="body"]
-position = Vector2(-16, -120)
+position = Vector2(-4.1007996e-05, -96.66667)
 texture = ExtResource("15_0sor1")
 region_enabled = true
-region_rect = Rect2(700, 60, 230, 180)
+region_rect = Rect2(225, 60, 180, 180)
 script = ExtResource("16_ht4hd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
