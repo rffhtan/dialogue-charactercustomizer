@@ -12,6 +12,8 @@ func _button_pressed():
 		print("1pressed")
 		if dialogueid.dialogueid == 7 :
 			avatar.charactercode = avatar.charactercode.replace("a","1") #ion wanna do allat splitting stuff
+		if dialogueid.dialogueid == 8:
+			avatar.charactercode = avatar.charactercode.replace("c", "2")
 		if dialogueid.dialogueid == 9 : 
 			avatar.charactercode = avatar.charactercode.replace("b",str(randi_range(7,8)))
 		if dialogueid.dialogueid == 10 :
