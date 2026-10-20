@@ -9,8 +9,16 @@ func _ready() -> void:
 	button.pressed.connect(_button_pressed)
 
 func _button_pressed():
-	if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).size() >= 3 :
-		dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[2])
+		print("3pressed")
+		if dialogueid.dialogueid == 8 :
+			avatar.charactercode = avatar.charactercode.replace("b","3")
+		if dialogueid.dialogueid == 10 :
+			print(avatar.charactercode)
+			avatar.charactercode = avatar.charactercode.replace("b","5")
+			print(avatar.charactercode)
+		if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).size() >= 3 :
+			await get_tree().create_timer(0.1).timeout
+			dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[2])
 
 func _options():	
 	if  manager.o.has(dialogueid.dialogueid) and (manager.o[dialogueid.dialogueid]).size() >= (3):
@@ -18,6 +26,7 @@ func _options():
 		set_text(((manager.o[dialogueid.dialogueid])[2]))	
 	else :
 		hide()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

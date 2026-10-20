@@ -1,23 +1,25 @@
-[gd_scene load_steps=19 format=3 uid="uid://b656jnyj7bwfm"]
+[gd_scene load_steps=21 format=3 uid="uid://b656jnyj7bwfm"]
 
-[ext_resource type="Script" uid="uid://x60qdpe3okjk" path="res://dialogue_engine.gd" id="1_oi3j2"]
+[ext_resource type="Script" uid="uid://x60qdpe3okjk" path="res://scripts/dialogue_engine.gd" id="1_oi3j2"]
 [ext_resource type="FontFile" uid="uid://b3h7kd2swjemo" path="res://pixelta/Pixelta.ttf" id="2_758ep"]
-[ext_resource type="Script" uid="uid://bsg4fg7jvq3b5" path="res://dialoguebox.gd" id="2_iq77p"]
-[ext_resource type="Script" uid="uid://wqkx6uonyjxf" path="res://panel.gd" id="2_q2h7b"]
-[ext_resource type="Script" uid="uid://vqm8qh216wel" path="res://dialoguetext.gd" id="3_758ep"]
-[ext_resource type="Script" uid="uid://di06bdtl37lla" path="res://texture_rect.gd" id="4_hoxo3"]
+[ext_resource type="Script" uid="uid://bsg4fg7jvq3b5" path="res://scripts/dialoguebox.gd" id="2_iq77p"]
+[ext_resource type="Script" uid="uid://wqkx6uonyjxf" path="res://scripts/panel.gd" id="2_q2h7b"]
+[ext_resource type="Script" uid="uid://vqm8qh216wel" path="res://scripts/dialoguetext.gd" id="3_758ep"]
+[ext_resource type="Script" uid="uid://di06bdtl37lla" path="res://scripts/texture_rect.gd" id="4_hoxo3"]
 [ext_resource type="Texture2D" uid="uid://cfn67ghdrcn2v" path="res://e7ca219ff1ba45b4509e4fb217eb2435.jpg" id="6_iqg0b"]
-[ext_resource type="Script" uid="uid://hg016n42b5qr" path="res://key.gd" id="9_cd3gt"]
-[ext_resource type="Script" uid="uid://cb1btepbrraur" path="res://options.gd" id="9_x4m5d"]
-[ext_resource type="Script" uid="uid://b6lp84noc1vxy" path="res://option.gd" id="10_x4m5d"]
-[ext_resource type="Script" uid="uid://dgpvhc8n6uavx" path="res://option_2.gd" id="11_mblti"]
-[ext_resource type="Script" uid="uid://dyqu82rh6iv2r" path="res://option_3.gd" id="12_1lttb"]
+[ext_resource type="Script" uid="uid://hg016n42b5qr" path="res://scripts/key.gd" id="9_cd3gt"]
+[ext_resource type="Script" uid="uid://cb1btepbrraur" path="res://scripts/options.gd" id="9_x4m5d"]
+[ext_resource type="Script" uid="uid://b6lp84noc1vxy" path="res://scripts/option.gd" id="10_x4m5d"]
+[ext_resource type="Script" uid="uid://dgpvhc8n6uavx" path="res://scripts/option_2.gd" id="11_mblti"]
+[ext_resource type="Script" uid="uid://dyqu82rh6iv2r" path="res://scripts/option_3.gd" id="12_1lttb"]
 [ext_resource type="Texture2D" uid="uid://bngo4poa3mwfx" path="res://assets/pixil-layer-0.png" id="13_5mesi"]
-[ext_resource type="Script" uid="uid://bf5cui5hrhfix" path="res://node.gd" id="14_6fyao"]
+[ext_resource type="Script" uid="uid://bf5cui5hrhfix" path="res://scripts/node.gd" id="14_6fyao"]
 [ext_resource type="Texture2D" uid="uid://bcp1ac2s05bma" path="res://assets/pixil-layer-1.png" id="15_mywgf"]
 [ext_resource type="Texture2D" uid="uid://5ufdc0vsi1eo" path="res://assets/png-transparent-explosion-explosion-food-effect-explosion-thumbnail.png" id="16_6fyao"]
-[ext_resource type="Script" uid="uid://b0kv6osx43jo1" path="res://explosio.gd" id="17_mywgf"]
-[ext_resource type="Script" uid="uid://dimkhx1fcmm0x" path="res://audio_stream_player_2d.gd" id="18_3ff0t"]
+[ext_resource type="Script" uid="uid://dss7ggd6t86j2" path="res://scripts/hair.gd" id="16_ht4hd"]
+[ext_resource type="Script" uid="uid://b0kv6osx43jo1" path="res://scripts/explosio.gd" id="17_mywgf"]
+[ext_resource type="Script" uid="uid://dimkhx1fcmm0x" path="res://scripts/audio_stream_player_2d.gd" id="18_3ff0t"]
+[ext_resource type="Script" uid="uid://whs6ihyhr2rv" path="res://scripts/rich_text_label.gd" id="20_0sor1"]
 
 [node name="Dialogue_Engine" type="Control"]
 layout_mode = 3
@@ -125,12 +127,15 @@ script = ExtResource("12_1lttb")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("13_5mesi")
 region_enabled = true
-region_rect = Rect2(260, 510, 150, 380)
+region_rect = Rect2(40, 50, 150, 380)
 script = ExtResource("14_6fyao")
 
 [node name="hair" type="Sprite2D" parent="body"]
-visible = false
+position = Vector2(49.99999, -145)
 texture = ExtResource("15_mywgf")
+region_enabled = true
+region_rect = Rect2(480, 250, 230, 180)
+script = ExtResource("16_ht4hd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -146,6 +151,21 @@ script = ExtResource("17_mywgf")
 position = Vector2(-176, -145)
 script = ExtResource("18_3ff0t")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -536.0
+offset_top = -201.0
+offset_right = 464.0
+offset_bottom = -29.0
+theme_override_font_sizes/normal_font_size = 100
+text = "press space to begin
+"
+script = ExtResource("20_0sor1")
+
+[connection signal="key1pressed" from="options" to="options/option" method="_button_pressed"]
+[connection signal="key2pressed" from="options" to="options/option2" method="_button_pressed"]
+[connection signal="key3pressed" from="options" to="options/option3" method="_button_pressed"]
 [connection signal="pressed" from="options/option" to="options/option" method="_button_pressed"]
 [connection signal="pressed" from="options/option2" to="options/option2" method="_button_pressed"]
 [connection signal="pressed" from="options/option3" to="options/option3" method="_button_pressed"]
