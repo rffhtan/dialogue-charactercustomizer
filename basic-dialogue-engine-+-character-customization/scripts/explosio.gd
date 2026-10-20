@@ -23,3 +23,5 @@ func _process(delta: float) -> void:
 		modulate.a = 0.25
 		modulate.a = 0
 		dialogueid.dialogueid = 20
+		await get_tree().create_timer(3).timeout
+		dialogueid.dialogueid = 21

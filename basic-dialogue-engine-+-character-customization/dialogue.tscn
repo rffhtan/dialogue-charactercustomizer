@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://dyqu82rh6iv2r" path="res://scripts/option_3.gd" id="12_1lttb"]
 [ext_resource type="Texture2D" uid="uid://bngo4poa3mwfx" path="res://assets/pixil-layer-0.png" id="13_5mesi"]
 [ext_resource type="Script" uid="uid://bf5cui5hrhfix" path="res://scripts/node.gd" id="14_6fyao"]
-[ext_resource type="Texture2D" uid="uid://bcp1ac2s05bma" path="res://assets/pixil-layer-1.png" id="15_mywgf"]
+[ext_resource type="Texture2D" uid="uid://devyx85jctulc" path="res://assets/pixil-layer-Layer-3.png" id="15_0sor1"]
 [ext_resource type="Texture2D" uid="uid://5ufdc0vsi1eo" path="res://assets/png-transparent-explosion-explosion-food-effect-explosion-thumbnail.png" id="16_6fyao"]
 [ext_resource type="Script" uid="uid://dss7ggd6t86j2" path="res://scripts/hair.gd" id="16_ht4hd"]
 [ext_resource type="Script" uid="uid://b0kv6osx43jo1" path="res://scripts/explosio.gd" id="17_mywgf"]
@@ -127,14 +127,14 @@ script = ExtResource("12_1lttb")
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("13_5mesi")
 region_enabled = true
-region_rect = Rect2(40, 50, 150, 380)
+region_rect = Rect2(257, 50, 150, 380)
 script = ExtResource("14_6fyao")
 
 [node name="hair" type="Sprite2D" parent="body"]
-position = Vector2(49.99999, -145)
-texture = ExtResource("15_mywgf")
+position = Vector2(-16, -120)
+texture = ExtResource("15_0sor1")
 region_enabled = true
-region_rect = Rect2(480, 250, 230, 180)
+region_rect = Rect2(700, 60, 230, 180)
 script = ExtResource("16_ht4hd")
 
 [node name="TextureRect" type="TextureRect" parent="."]

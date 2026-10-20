@@ -16,6 +16,11 @@ func _button_pressed():
 			print(avatar.charactercode)
 			avatar.charactercode = avatar.charactercode.replace("b","5")
 			print(avatar.charactercode)
+		if dialogueid.dialogueid == 13 :
+				if str(avatar.charactercode).substr(2,1) == "2" :
+					avatar.charactercode = avatar.charactercode.replace("d",str(randi_range(1,1)))
+				if str(avatar.charactercode).substr(2,1) == "1" :
+					pass
 		if  manager.o2.has(dialogueid.dialogueid) and ((manager.o2[dialogueid.dialogueid])).size() >= 3 :
 			await get_tree().create_timer(0.1).timeout
 			dialogueid.dialogueid = ((manager.o2[dialogueid.dialogueid])[2])

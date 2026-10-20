@@ -18,8 +18,13 @@ func _button_pressed():
 		if dialogueid.dialogueid == 10 :
 			print(avatar.charactercode)
 			avatar.charactercode = avatar.charactercode.replace("b","1")
-		else:
-			pass
+		if dialogueid.dialogueid == 12 :
+			avatar.charactercode = avatar.charactercode.replace("c","2")
+		if dialogueid.dialogueid == 13 :
+				if str(avatar.charactercode).substr(2,1) == "2" :
+					avatar.charactercode = avatar.charactercode.replace("d",str(randi_range(2,4)))
+				if str(avatar.charactercode).substr(2,1) == "1" :
+					pass
 		if dialogueid.dialogueid == 16 :
 			print(avatar.charactercode)
 			if avatar.charactercode.substr(0,1) == "1" :

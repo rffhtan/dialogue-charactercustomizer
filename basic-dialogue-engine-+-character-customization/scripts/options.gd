@@ -1,7 +1,7 @@
 extends Control
 @onready var engine = get_node("/root/Dialogue_Engine")
 @onready var manager = get_node("/root/Dialogue_Engine/script_manager")
-
+var dialoguestarted = false
 signal key1pressed()
 signal key2pressed()
 signal key3pressed()
@@ -21,15 +21,16 @@ func _options():
 
 	
 func _process(delta: float) -> void:
-		pass
+	if dialoguestarted == true :
+		if Input.is_action_just_pressed("num1") :
+			key1pressed.emit()
+		if Input.is_action_just_pressed("num2") :
+			key2pressed.emit()
+		if Input.is_action_just_pressed("num3") :
+			key3pressed.emit()
 
 func _dialogue() :
-	if Input.is_action_just_pressed("num1") :
-		key1pressed.emit()
-	if Input.is_action_just_pressed("num2") :
-		key2pressed.emit()
-	if Input.is_action_just_pressed("num3") :
-		key3pressed.emit()
+	dialoguestarted = true
 
 
 
